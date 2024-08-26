@@ -14,4 +14,22 @@
             display: none;
         }
     }
+
+    &__navigation {
+        all: unset;
+        position: relative;
+        top: 40%;
+
+        &--next {
+            right: 4%;
+        }
+
+        &--prev {
+            left: 35%;
+        }
+    }
+
+    &__description {
+
+    }
 }
