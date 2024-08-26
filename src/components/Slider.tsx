@@ -45,7 +45,11 @@ export default function Slider({ products }: { products: Array<Product> }) {
                             className={currentSlide === index ? "slider__slide" : "slider__slide slider__slide--inactive"}
                             key={product.id}
                         >
-                            <img src={product.thumbnail} alt="product-image" />
+                            <div className="slider__slide--description">
+                                <strong>{product.title}</strong>
+                                <p>{product.description}</p>
+                            </div>
+                            <img src={product.thumbnail} alt="product-image" className="slider__slide--image" />
                         </li>
                     )
                 })}

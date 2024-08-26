@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import SliderContainer from './src/components/SliderContainer';
+import './src/styles/index.scss'
 
 const rootContainer = document.getElementById('root');
 

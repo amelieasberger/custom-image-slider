@@ -17,10 +17,10 @@ export default function SliderContainer() {
 
     return (
         <div>
-            <h1>Hallo</h1>
-            <div>
+            <h1>Hello Towa, welcome to my product slider</h1>
+            {products.length > 0 && (
                 <Slider products={products} />
-            </div>
+            )}
         </div>
     );
 };

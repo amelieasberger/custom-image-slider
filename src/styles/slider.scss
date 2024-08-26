@@ -1,3 +1,6 @@
+$color-white: #FFFFFF;
+$color-gray: #919191;
+
 .slider {
     display: flex;
     align-items: center;
@@ -7,6 +10,7 @@
     overflow: hidden;
     background: linear-gradient(#d2e6ff, #575757);
     padding: 20px;
+    border-radius: 4px;
 
     &__slide-container {
         flex: 1 1 auto;
@@ -18,9 +22,26 @@
         overflow: hidden;
         display: flex;
         justify-content: center;
+        color: $color-white;
+
+        // move description under the product image for small devices
+        @media screen and (max-width: 500px) {
+            flex-direction: column-reverse;
+        }
         
         &--inactive {
             display: none;
+        }
+
+        &--description {
+            display: flex;
+            flex-direction: column;
+            align-self: end;
+        }
+
+        &--image {
+            object-fit: contain;
+            max-height: 250px;
         }
     }
 
@@ -39,13 +60,13 @@
     }
 
     &__bullet {
-        background-color: #919191;
+        background-color: $color-gray;
         flex: 1 1 auto;
         height: 5px;
         border-radius: 10px;
 
         &--enabled {
-            background-color: #FFFFFF;
+            background-color: $color-white;
         }
     }
 
@@ -59,15 +80,5 @@
     &__button {
         all: unset;
         cursor: pointer;
-
-        &--next {
-        }
-
-        &--prev {
-        }
-    }
-
-    &__description {
-
     }
 }
