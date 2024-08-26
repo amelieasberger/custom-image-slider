@@ -16,6 +16,10 @@
         display: none;
     }
 
+    &__title {
+        font-size: 24px;
+    }
+
     &__description {
         display: flex;
         flex-direction: column;

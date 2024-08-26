@@ -32,14 +32,14 @@ export default function Slider({ products }: { products: Array<Product> }): JSX.
         <div className="slider">
             <ul className="slider__slide-container">
                 {products.map((product: Product, index: number) => {
-                    return <Slide product={product} isSlideActive={currentSlide === index} />;
+                    return <Slide product={product} isSlideActive={currentSlide === index} key={`slide_${product.id}`} />;
                 })}
             </ul>
             <div className="slider__navigation">
                 <div className="slider__bullet-container">
                     {products.map((product, index) => {
                         return (
-                            <div className={currentSlide === index ? 'slider__bullet slider__bullet--enabled' : 'slider__bullet'} />
+                            <div key={`bullet_${product.id}`} className={currentSlide === index ? 'slider__bullet slider__bullet--enabled' : 'slider__bullet'} />
                         );
                     })}
                 </div>

@@ -10,12 +10,12 @@ export default function Slide({ product, isSlideActive }: { product: Product, is
             className={isSlideActive ? 'slide' : 'slide slide--inactive'}
             key={product.id}
         >
-            <div className="slide slide__description">
+            <div className="slide__description">
                 <p>{product.brand}</p>
-                <strong>{product.title}</strong>
+                <strong className="slide__title">{product.title}</strong>
                 <p>{product.description}</p>
             </div>
-            <img src={product.thumbnail} alt="product-image" className="slide slide__image" />
+            <img src={product.thumbnail} alt="product-image" className="slide__image" />
         </li>   
     );
 };
