@@ -2,7 +2,7 @@ import React from 'react';
 
 const RightArrow = ({ fill }: { fill: string }) => {
     return (
-        <svg fill={fill} height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 330">
+        <svg fill={fill} height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 330">
         <path 
             id="XMLID_222_" 
             d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001

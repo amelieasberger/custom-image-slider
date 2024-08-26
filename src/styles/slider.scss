@@ -1,11 +1,20 @@
 .slider {
     display: flex;
     align-items: center;
-    height: 300px;
+    flex-direction: column;
+    max-height: 500px;
+    max-width: 1000px;
     overflow: hidden;
+    background: linear-gradient(#d2e6ff, #575757);
+    padding: 20px;
+
+    &__slide-container {
+        flex: 1 1 auto;
+        all: unset;
+    }
 
     &__slide {
-        width: 500px;
+        width: 100%;
         overflow: hidden;
         display: flex;
         justify-content: center;
@@ -16,16 +25,45 @@
     }
 
     &__navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__bulletContainer {
+        display: flex;
+        gap: 8px;
+        margin-right: 20px;
+        flex: 4 1 auto;
+    }
+
+    &__bullet {
+        background-color: #919191;
+        flex: 1 1 auto;
+        height: 5px;
+        border-radius: 10px;
+
+        &--enabled {
+            background-color: #FFFFFF;
+        }
+    }
+
+    &__button-container {
+        flex: 1 1 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: end;
+    }
+
+    &__button {
         all: unset;
-        position: relative;
-        top: 40%;
+        cursor: pointer;
 
         &--next {
-            right: 4%;
         }
 
         &--prev {
-            left: 35%;
         }
     }
 

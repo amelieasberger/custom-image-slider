@@ -38,22 +38,35 @@ export default function Slider({ products }: { products: Array<Product> }) {
 
     return (
         <div className="slider">
-             <button onClick={showPrevSlide} disabled={isPrevButtonDisabled} className="slider__navigation slider__navigation--prev">
-                <LeftArrow fill={isPrevButtonDisabled ? colorGrey : colorWhite} />
-            </button>
-            {products.map((product: Product, index: number) => {
-                return (
-                    <div 
-                        className={currentSlide === index ? "slider__slide" : "slider__slide slider__slide--inactive"}
-                        key={product.id}
-                    >
-                        <img src={product.thumbnail} alt="cat-image" />
-                    </div>
-                )
-            })}
-            <button onClick={showNextSlide} disabled={isNextButtonDisabled} className="slider__navigation slider__navigation--next">
-                <RightArrow fill={isNextButtonDisabled ? colorGrey : colorWhite} />
-            </button>
+            <ul className="slider__slide-container">
+                {products.map((product: Product, index: number) => {
+                    return (
+                        <li 
+                            className={currentSlide === index ? "slider__slide" : "slider__slide slider__slide--inactive"}
+                            key={product.id}
+                        >
+                            <img src={product.thumbnail} alt="product-image" />
+                        </li>
+                    )
+                })}
+            </ul>
+            <div className="slider__navigation">
+                <div className="slider__bulletContainer">
+                    {products.map((product, index) => {
+                    return (
+                        <div className={currentSlide === index ? "slider__bullet slider__bullet--enabled" : "slider__bullet"} />
+                    );
+                })}
+                </div>
+                <div className="slider__button-container">
+                    <button onClick={showPrevSlide} disabled={isPrevButtonDisabled} className="slider__button slider__button--prev">
+                        <LeftArrow fill={isPrevButtonDisabled ? colorGrey : colorWhite} />
+                    </button>
+                    <button onClick={showNextSlide} disabled={isNextButtonDisabled} className="slider__button slider__button--next">
+                        <RightArrow fill={isNextButtonDisabled ? colorGrey : colorWhite} />
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };
