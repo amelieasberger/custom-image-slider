@@ -1,0 +1,29 @@
+@import '../variables/colors.scss';
+
+.slide {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    color: $color-white;
+
+    // move description under the product image for small devices
+    @media screen and (max-width: 500px) {
+        flex-direction: column-reverse;
+    }
+    
+    &--inactive {
+        display: none;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        align-self: end;
+    }
+
+    &__image {
+        object-fit: contain;
+        max-height: 250px;
+    }
+}

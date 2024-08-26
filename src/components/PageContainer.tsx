@@ -16,12 +16,12 @@ export default function PageContainer() {
 
 
     return (
-        <div>
+        <>
             <h1>Hello Towa, welcome to my product slider</h1>
             {products.length > 0 && (
                 <Slider products={products} />
             )}
-        </div>
+        </>
     );
 };
 

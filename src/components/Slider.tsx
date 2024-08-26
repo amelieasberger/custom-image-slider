@@ -15,8 +15,6 @@ export interface Product {
 }
 
 export default function Slider({ products }: { products: Array<Product> }): JSX.Element {
-    console.log(products);
-
     const [ currentSlide, setCurrentSlide ] = useState(0);
 
     const showPrevSlide = () => {
@@ -29,9 +27,6 @@ export default function Slider({ products }: { products: Array<Product> }): JSX.
 
     const isPrevButtonDisabled = currentSlide === 0;
     const isNextButtonDisabled = currentSlide === products.length - 1;
-    const colorGrey = '#919191';
-    const colorWhite = '#FFFFFF';
-
 
     return (
         <div className="slider">
@@ -41,19 +36,19 @@ export default function Slider({ products }: { products: Array<Product> }): JSX.
                 })}
             </ul>
             <div className="slider__navigation">
-                <div className="slider__bulletContainer">
+                <div className="slider__bullet-container">
                     {products.map((product, index) => {
-                    return (
-                        <div className={currentSlide === index ? "slider__bullet slider__bullet--enabled" : "slider__bullet"} />
-                    );
-                })}
+                        return (
+                            <div className={currentSlide === index ? 'slider__bullet slider__bullet--enabled' : 'slider__bullet'} />
+                        );
+                    })}
                 </div>
                 <div className="slider__button-container">
-                    <button onClick={showPrevSlide} disabled={isPrevButtonDisabled} className="slider__button slider__button--prev">
-                        <LeftArrow fill={isPrevButtonDisabled ? colorGrey : colorWhite} />
+                    <button onClick={showPrevSlide} disabled={isPrevButtonDisabled} className="slider__button">
+                        <LeftArrow isDisabled={isPrevButtonDisabled} />
                     </button>
-                    <button onClick={showNextSlide} disabled={isNextButtonDisabled} className="slider__button slider__button--next">
-                        <RightArrow fill={isNextButtonDisabled ? colorGrey : colorWhite} />
+                    <button onClick={showNextSlide} disabled={isNextButtonDisabled} className="slider__button">
+                        <RightArrow isDisabled={isNextButtonDisabled} />
                     </button>
                 </div>
             </div>
