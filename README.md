@@ -1,7 +1,7 @@
 # towa-image-slider
 
-# if you want to install the project, use `npm ci`
-## to run the project locally use `npm start`
+### if you want to install the project, use `npm ci`
+### to run the project locally use `npm start`
 
 
 ## This project is initially set up like this:
@@ -12,6 +12,11 @@
 `npm install --save-dev @babel/core babel-loader @babel/cli`
 `npm install --save-dev @babel/preset-env`
 `npm install --save-dev @babel/preset-react`
+`npm install --save-dev @babel/preset-typescript`
+
+### installed sass and sass loader
+`npm install -g sass`
+`npm i --save-dev sass-loader node-sass`
 
 ### installed webpack dependencies to bundle React into a single JavaScript File
 `npm install --save-dev webpack webpack-cli webpack-dev-server`

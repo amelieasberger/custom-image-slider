@@ -5,7 +5,7 @@ module.exports = {
   entry: './index.js',
   mode: 'development',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './public'),
     filename: 'index_bundle.js',
   },
   target: 'web',
@@ -28,6 +28,14 @@ module.exports = {
         exclude: /node_modules/, 
         use: 'babel-loader', 
       },
+      {
+        test: /\.(css)$/,
+        use: ['style-loader','css-loader']
+      },
+      {
+        test: /\.(s(a|c)ss)$/,
+        use: ['style-loader','css-loader', 'sass-loader']
+      }
     ],
   },
   plugins: [

@@ -1,0 +1,17 @@
+.slider {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    overflow: hidden;
+
+    &__slide {
+        width: 500px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        
+        &--inactive {
+            display: none;
+        }
+    }
+}
