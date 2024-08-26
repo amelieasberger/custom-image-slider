@@ -7,7 +7,7 @@ import { Product } from './Slider';
 export default function Slide({ product, isSlideActive }: { product: Product, isSlideActive: boolean }): JSX.Element {
     return (
         <li 
-            className={isSlideActive ? "slide" : "slide slide--inactive"}
+            className={isSlideActive ? 'slide' : 'slide slide--inactive'}
             key={product.id}
         >
             <div className="slide slide__description">

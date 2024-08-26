@@ -7,7 +7,7 @@ towa-image-slider is a responsive slider with navigation arrows
 npm ci
 ```
 
-### To run the project locally use:
+### To run the project locally, use:
 ```bash
 npm start
 ```
@@ -19,14 +19,18 @@ npm start
 `npm init -y`
 
 #### installed babel dependencies to convert modern JS/JSX into backward-compatible versions for older browsers
-`npm install --save-dev @babel/core babel-loader @babel/cli`
-`npm install --save-dev @babel/preset-env`
-`npm install --save-dev @babel/preset-react`
-`npm install --save-dev @babel/preset-typescript`
+```bash
+npm install --save-dev @babel/core babel-loader @babel/cli
+npm install --save-dev @babel/preset-env
+npm install --save-dev @babel/preset-react
+npm install --save-dev @babel/preset-typescript
+```
 
-#### installed sass and sass loader
-`npm install -g sass`
-`npm i --save-dev sass-loader node-sass`
+#### installed sass and sass-loader
+```bash
+npm install -g sass
+npm i --save-dev sass-loader node-sass
+```
 
 #### installed webpack dependencies to bundle React into a single JavaScript File
 `npm install --save-dev webpack webpack-cli webpack-dev-server`
