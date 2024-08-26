@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Slider from './Slider';
 
 
-export default function SliderContainer() {
+export default function PageContainer() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -25,4 +25,4 @@ export default function SliderContainer() {
     );
 };
 
-SliderContainer.displayName = 'SliderContainer';
+PageContainer.displayName = 'PageContainer';

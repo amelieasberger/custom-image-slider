@@ -2,22 +2,19 @@ import React, { useState } from 'react';
 import '../styles/slider.scss';
 import LeftArrow from '../icons/LeftArrow';
 import RightArrow from '../icons/RightArrow';
+import Slide from './Slide';
 
-interface Product {
+export interface Product {
     id: number;
     title: string;
     description: string;
     category: string;
     price: number;
-    tags: Array<string>;
     brand: string;
-    weight: number;
-    returnPolicy: string;
-    images: [];
     thumbnail: string;
 }
 
-export default function Slider({ products }: { products: Array<Product> }) {
+export default function Slider({ products }: { products: Array<Product> }): JSX.Element {
     console.log(products);
 
     const [ currentSlide, setCurrentSlide ] = useState(0);
@@ -40,18 +37,7 @@ export default function Slider({ products }: { products: Array<Product> }) {
         <div className="slider">
             <ul className="slider__slide-container">
                 {products.map((product: Product, index: number) => {
-                    return (
-                        <li 
-                            className={currentSlide === index ? "slider__slide" : "slider__slide slider__slide--inactive"}
-                            key={product.id}
-                        >
-                            <div className="slider__slide--description">
-                                <strong>{product.title}</strong>
-                                <p>{product.description}</p>
-                            </div>
-                            <img src={product.thumbnail} alt="product-image" className="slider__slide--image" />
-                        </li>
-                    )
+                    return <Slide product={product} isSlideActive={currentSlide === index} />;
                 })}
             </ul>
             <div className="slider__navigation">
