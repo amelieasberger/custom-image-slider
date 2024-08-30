@@ -12,30 +12,6 @@ div .swiper-slide {
     cursor: grab;
     max-width: 1000px;
 
-    &__slide {
-        width: 100%;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        color: $color-white;
-
-        // move description under the product image for small devices
-        @media screen and (max-width: 550px) {
-            flex-direction: column-reverse;
-        }
-
-        &--description {
-            display: flex;
-            flex-direction: column;
-            align-self: end;
-        }
-
-        &--image {
-            object-fit: contain;
-            max-height: 250px;
-        }
-    }
-
     &__navigation {
         display: flex;
         align-items: center;
