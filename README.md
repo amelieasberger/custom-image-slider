@@ -1,6 +1,7 @@
 # towa-image-slider
 
-towa-image-slider is a responsive slider with navigation arrows
+towa-image-slider is a responsive product image slider with custom navigation arrows, build with Swiper.js
+
 
 ### To install the project, use:
 ```bash
@@ -43,3 +44,6 @@ npm i --save-dev sass-loader node-sass
 
 #### installed typescript dependencies
 `npm install --save typescript @types/node @types/react @types/react-dom @types/jest`
+
+#### installed swiper
+`npm install --save-dev swiper`

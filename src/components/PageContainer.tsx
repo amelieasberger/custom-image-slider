@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Slider from './Slider';
 
-
 export default function PageContainer() {
     const [products, setProducts] = useState([]);
 
@@ -13,7 +12,6 @@ export default function PageContainer() {
                 console.log(error);
             });
     }, []);
-
 
     return (
         <>
