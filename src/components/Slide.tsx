@@ -6,8 +6,8 @@ import { Product } from './Slider';
 
 export default function Slide({ product, isSlideActive }: { product: Product, isSlideActive: boolean }): JSX.Element {
     return (
-        <li 
-            className={isSlideActive ? 'slide' : 'slide slide--inactive'}
+        <div 
+            className={"slide"}
             key={product.id}
         >
             <div className="slide__description">
@@ -16,7 +16,7 @@ export default function Slide({ product, isSlideActive }: { product: Product, is
                 <p>{product.description}</p>
             </div>
             <img src={product.thumbnail} alt="product-image" className="slide__image" />
-        </li>   
+        </div>   
     );
 };
 

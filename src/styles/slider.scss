@@ -1,20 +1,10 @@
 @import '../variables/colors.scss';
 
 .slider {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    max-height: 500px;
-    max-width: 1000px;
-    overflow: hidden;
     background: linear-gradient(#d2e6ff, #575757);
     padding: 20px;
     border-radius: 4px;
-
-    &__slide-container {
-        flex: 1 1 auto;
-        all: unset;
-    }
+    cursor: grab;
 
     &__slide {
         width: 100%;
@@ -26,10 +16,6 @@
         // move description under the product image for small devices
         @media screen and (max-width: 500px) {
             flex-direction: column-reverse;
-        }
-        
-        &--inactive {
-            display: none;
         }
 
         &--description {
@@ -46,16 +32,22 @@
 
     &__navigation {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        width: 100%;
     }
 
     &__bullet-container {
         display: flex;
-        gap: 8px;
         margin-right: 20px;
         flex: 4 1 auto;
+
+        // smaller gap between bullets for small devices
+        @media screen and (max-width: 500px) {
+            gap: 4px;
+        }
+
+        @media screen and (min-width: 500px) {
+            gap: 8px;
+        }
     }
 
     &__bullet {

@@ -3,6 +3,11 @@ import '../styles/slider.scss';
 import LeftArrow from '../icons/LeftArrow';
 import RightArrow from '../icons/RightArrow';
 import Slide from './Slide';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
+import { Navigation } from 'swiper/modules';
 
 export interface Product {
     id: number;
@@ -16,25 +21,32 @@ export interface Product {
 
 export default function Slider({ products }: { products: Array<Product> }): JSX.Element {
     const [ currentSlide, setCurrentSlide ] = useState(0);
-
-    const showPrevSlide = () => {
-        setCurrentSlide(currentSlide - 1);
-    };
-
-    const showNextSlide = () => {
-        setCurrentSlide(currentSlide + 1);
-    };
-
     const isPrevButtonDisabled = currentSlide === 0;
     const isNextButtonDisabled = currentSlide === products.length - 1;
 
+    const handleSlideChange = (event: { activeIndex: number }): void => {
+        setCurrentSlide(event.activeIndex);
+    };
+
     return (
         <div className="slider">
-            <ul className="slider__slide-container">
-                {products.map((product: Product, index: number) => {
-                    return <Slide product={product} isSlideActive={currentSlide === index} key={`slide_${product.id}`} />;
+            <Swiper
+                modules={[Navigation]}
+                slidesPerView={1}
+                navigation={{
+                    nextEl: '.swiper-next-button',
+                    prevEl: '.swiper-prev-button',
+                }}
+                onSlideChange={handleSlideChange}
+            >
+                 {products.map((product: Product, index: number) => {
+                    return (
+                        <SwiperSlide>
+                            <Slide product={product} isSlideActive={currentSlide === index} key={`slide_${product.id}`} />;
+                        </SwiperSlide>
+                    )
                 })}
-            </ul>
+            </Swiper>
             <div className="slider__navigation">
                 <div className="slider__bullet-container">
                     {products.map((product, index) => {
@@ -44,10 +56,10 @@ export default function Slider({ products }: { products: Array<Product> }): JSX.
                     })}
                 </div>
                 <div className="slider__button-container">
-                    <button onClick={showPrevSlide} disabled={isPrevButtonDisabled} className="slider__button">
+                    <button disabled={isPrevButtonDisabled} className="swiper-prev-button slider__button">
                         <LeftArrow isDisabled={isPrevButtonDisabled} />
                     </button>
-                    <button onClick={showNextSlide} disabled={isNextButtonDisabled} className="slider__button">
+                    <button disabled={isNextButtonDisabled} className="swiper-next-button slider__button">
                         <RightArrow isDisabled={isNextButtonDisabled} />
                     </button>
                 </div>

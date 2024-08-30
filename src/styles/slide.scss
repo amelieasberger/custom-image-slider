@@ -11,10 +11,6 @@
     @media screen and (max-width: 500px) {
         flex-direction: column-reverse;
     }
-    
-    &--inactive {
-        display: none;
-    }
 
     &__title {
         font-size: 24px;
