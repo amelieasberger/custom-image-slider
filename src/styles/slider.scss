@@ -1,10 +1,16 @@
 @import '../variables/colors.scss';
 
+// override for styles from Swiper component
+div .swiper-slide {
+    height: auto;
+}
+
 .slider {
-    background: linear-gradient(#d2e6ff, #575757);
+    background: linear-gradient(#e5fffd, #353535);
     padding: 20px;
     border-radius: 4px;
     cursor: grab;
+    max-width: 1000px;
 
     &__slide {
         width: 100%;
@@ -14,7 +20,7 @@
         color: $color-white;
 
         // move description under the product image for small devices
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 550px) {
             flex-direction: column-reverse;
         }
 
@@ -41,11 +47,11 @@
         flex: 4 1 auto;
 
         // smaller gap between bullets for small devices
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 550px) {
             gap: 4px;
         }
 
-        @media screen and (min-width: 500px) {
+        @media screen and (min-width: 550px) {
             gap: 8px;
         }
     }

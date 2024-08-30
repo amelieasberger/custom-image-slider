@@ -6,7 +6,6 @@ import Slide from './Slide';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
 import { Navigation } from 'swiper/modules';
 
 export interface Product {
@@ -38,22 +37,22 @@ export default function Slider({ products }: { products: Array<Product> }): JSX.
                     prevEl: '.swiper-prev-button',
                 }}
                 onSlideChange={handleSlideChange}
+                spaceBetween={10}
             >
-                 {products.map((product: Product, index: number) => {
-                    return (
-                        <SwiperSlide>
-                            <Slide product={product} isSlideActive={currentSlide === index} key={`slide_${product.id}`} />;
-                        </SwiperSlide>
-                    )
-                })}
+                {products.map((product: Product, index: number) => 
+                    <SwiperSlide key={`slide_${product.id}`}>
+                        <Slide product={product} isSlideActive={currentSlide === index} />;
+                    </SwiperSlide>
+                )}
             </Swiper>
             <div className="slider__navigation">
                 <div className="slider__bullet-container">
-                    {products.map((product, index) => {
-                        return (
-                            <div key={`bullet_${product.id}`} className={currentSlide === index ? 'slider__bullet slider__bullet--enabled' : 'slider__bullet'} />
-                        );
-                    })}
+                    {products.map((product, index) => 
+                        <div
+                            key={`bullet_${product.id}`} 
+                            className={currentSlide === index ? 'slider__bullet slider__bullet--enabled' : 'slider__bullet'} 
+                        />
+                    )}
                 </div>
                 <div className="slider__button-container">
                     <button disabled={isPrevButtonDisabled} className="swiper-prev-button slider__button">
