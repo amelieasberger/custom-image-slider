@@ -5,11 +5,17 @@ import SliderNavigation from '../components/SliderNavigation';
 const testProducts = [
     {
         id: 1,
-        name: 'meow',
+        title: 'meow',
+        description: 'Test',
+        brand: 'Test',
+        thumbnail: 'Test',
     },
     {
         id: 2,
-        name: 'wuff',
+        title: 'wuff',
+        description: 'Test',
+        brand: 'Test',
+        thumbnail: 'Test',
     },
 ];
 

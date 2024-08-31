@@ -2,11 +2,12 @@
   "name": "towa-image-slider",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.tsx",
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server .",
-    "build": "webpack ."
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -34,11 +35,13 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "mini-css-extract-plugin": "^2.9.1",
     "node-sass": "^9.0.0",
     "sass": "^1.77.8",
     "sass-loader": "^16.0.1",
     "style-loader": "^4.0.0",
     "swiper": "^11.1.11",
+    "ts-loader": "^9.5.1",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import PageContainer from './src/components/PageContainer';
-import './src/styles/index.scss';
+import PageContainer from './components/PageContainer';
+import './styles/index.scss';
 
 const rootContainer = document.getElementById('root');
 

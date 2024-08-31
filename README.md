@@ -8,7 +8,7 @@ towa-image-slider is a responsive slider with custom navigation arrows, build wi
 npm ci
 ```
 
-### To run the project locally, use:
+### To run the project locally (local devserver), use:
 ```bash
 npm start
 ```
@@ -17,6 +17,13 @@ npm start
 ```bash
 npm test
 ```
+
+### bundle typescript files to minified js
+```bash
+npm run build
+```
+
+
 
 
 ## FYI: This project is initially set up like this:
