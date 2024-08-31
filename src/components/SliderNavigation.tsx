@@ -11,19 +11,19 @@ export default function SliderNavigation({
 }: {
     products: Array<Product>, 
     currentSlide: number,
-    prevButtonClass: string,
-    nextButtonClass: string
+    prevButtonClass?: string,
+    nextButtonClass?: string
 }): JSX.Element {
     const isPrevButtonDisabled = currentSlide === 0;
     const isNextButtonDisabled = currentSlide === products.length - 1;
 
     return (
-        <div className="navigation">
+        <div className="navigation" id="navigation">
             <div className="navigation__bullet-container">
                 {products.map((product, index) => 
                     <span
                         key={`bullet_${product.id}`} 
-                        className={`navigation__bullet${currentSlide === index ? ' navigation__bullet--enabled' : ''}`} 
+                        className={`navigation__bullet${currentSlide === index ? ' navigation__bullet--active' : ''}`} 
                     />
                 )}
             </div>
