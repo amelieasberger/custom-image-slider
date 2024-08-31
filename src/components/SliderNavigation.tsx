@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/slider-navigation.scss';
 import LeftArrow from '../icons/LeftArrow';
 import RightArrow from '../icons/RightArrow';
+import { Product } from './Slider';
 
 export default function SliderNavigation({
     products, 
