@@ -8,11 +8,11 @@ npm ci
 ```
 
 ### To run the project on a local devserver:
-#### you need to set this in your webpack.config.js
+you need to set this in your webpack.config.js
 ```bash
 mode: "development"
 ```
-#### and run:
+and run:
 ```bash
 npm start
 ```
@@ -22,7 +22,12 @@ npm start
 npm test
 ```
 
-### Run this to bundle ts and scss files to minified js and css for production
+### Bundle files for production mode like this:
+you need to set this in your webpack.config.js
+```bash
+mode: "production"
+```
+and run this to create bundles:
 ```bash
 npm run build
 ```
