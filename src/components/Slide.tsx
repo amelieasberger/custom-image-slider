@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/slide.scss';
 import type { Product } from './Slider';
 

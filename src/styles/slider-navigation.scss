@@ -1,0 +1,44 @@
+@import '../variables/colors.scss';
+
+.navigation {
+    display: flex;
+    align-items: center;
+
+    &__bullet-container {
+        display: flex;
+        margin-right: 20px;
+        flex: 4 1 auto;
+
+        // smaller gap between bullets for small devices
+        @media screen and (max-width: 550px) {
+            gap: 4px;
+        }
+
+        @media screen and (min-width: 550px) {
+            gap: 8px;
+        }
+    }
+
+    &__bullet {
+        background-color: $color-gray;
+        flex: 1 1 auto;
+        height: 5px;
+        border-radius: 10px;
+
+        &--enabled {
+            background-color: $color-white;
+        }
+    }
+
+    &__button-container {
+        flex: 1 1 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: end;
+    }
+
+    &__button {
+        all: unset;
+        cursor: pointer;
+    }
+}

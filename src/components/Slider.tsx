@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import '../styles/slider.scss';
-import LeftArrow from '../icons/LeftArrow';
-import RightArrow from '../icons/RightArrow';
 import Slide from './Slide';
+import { Navigation } from 'swiper/modules';
+import SliderNavigation from './SliderNavigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-import { Navigation } from 'swiper/modules';
+import '../styles/slider.scss';
 
 export interface Product {
     id: number;
@@ -20,8 +19,8 @@ export interface Product {
 
 export default function Slider({ products }: { products: Array<Product> }): JSX.Element {
     const [ currentSlide, setCurrentSlide ] = useState(0);
-    const isPrevButtonDisabled = currentSlide === 0;
-    const isNextButtonDisabled = currentSlide === products.length - 1;
+    const prevButtonClass = 'swiper-prev-button';
+    const nextButtonClass = 'swiper-next-button';
 
     const handleSlideChange = (event: { activeIndex: number }): void => {
         setCurrentSlide(event.activeIndex);
@@ -33,8 +32,8 @@ export default function Slider({ products }: { products: Array<Product> }): JSX.
                 modules={[Navigation]}
                 slidesPerView={1}
                 navigation={{
-                    nextEl: '.swiper-next-button',
-                    prevEl: '.swiper-prev-button',
+                    nextEl: `.${nextButtonClass}`,
+                    prevEl: `.${prevButtonClass}`,
                 }}
                 onSlideChange={handleSlideChange}
                 spaceBetween={10}
@@ -45,24 +44,12 @@ export default function Slider({ products }: { products: Array<Product> }): JSX.
                     </SwiperSlide>
                 )}
             </Swiper>
-            <div className="slider__navigation">
-                <div className="slider__bullet-container">
-                    {products.map((product, index) => 
-                        <div
-                            key={`bullet_${product.id}`} 
-                            className={currentSlide === index ? 'slider__bullet slider__bullet--enabled' : 'slider__bullet'} 
-                        />
-                    )}
-                </div>
-                <div className="slider__button-container">
-                    <button disabled={isPrevButtonDisabled} className="swiper-prev-button slider__button">
-                        <LeftArrow isDisabled={isPrevButtonDisabled} />
-                    </button>
-                    <button disabled={isNextButtonDisabled} className="swiper-next-button slider__button">
-                        <RightArrow isDisabled={isNextButtonDisabled} />
-                    </button>
-                </div>
-            </div>
+            <SliderNavigation 
+                products={products}
+                currentSlide={currentSlide} 
+                prevButtonClass={prevButtonClass} 
+                nextButtonClass={nextButtonClass} 
+            />
         </div>
     );
 };
