@@ -2,13 +2,16 @@
 
 towa-image-slider is a responsive slider with custom navigation arrows, build with React/Typescript and Swiper.js React Components.
 
-
 ### To install the project, use:
 ```bash
 npm ci
 ```
 
-### To run the project locally (local devserver), use:
+### To run the project on a local devserver, you need to set this in your webpack.config.js...
+```bash
+mode: "development"
+```
+### and run
 ```bash
 npm start
 ```
@@ -23,7 +26,7 @@ npm test
 npm run build
 ```
 
-
+### set mode in webpack.config.js to "development" 
 
 
 ## FYI: This project is initially set up like this:

@@ -10,7 +10,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   target: 'web',
-  mode: 'development',
+  mode: 'production', // change mode to development to run project on local dev server
   devServer: {
     port: '5000',
     static: {
@@ -27,7 +27,7 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/, 
-        exclude: /node_modules/, 
+        exclude: /node_modules/,
         use: 'ts-loader', 
       },
       {
