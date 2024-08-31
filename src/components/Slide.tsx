@@ -6,7 +6,7 @@ export default function Slide({ product, isSlideActive }: { product: Product, is
     return (
         <div className="slide" key={product.id}>
             <div className="slide__information">
-                <p>{product.brand}</p>
+                <span>{product.brand}</span>
                 <strong className="slide__title">{product.title}</strong>
                 <p className="slide__description">{product.description}</p>
             </div>
