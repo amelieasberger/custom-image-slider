@@ -1,5 +1,5 @@
 {
-  "name": "towa-image-slider",
+  "name": "custom-image-slider",
   "version": "1.0.0",
   "description": "",
   "main": "./src/index.tsx",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amelieasberger/towa-image-slider.git"
+    "url": "git+https://github.com/amelieasberger/custom-image-slider.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amelieasberger/towa-image-slider/issues"
+    "url": "https://github.com/amelieasberger/custom-image-slider/issues"
   },
-  "homepage": "https://github.com/amelieasberger/towa-image-slider#readme",
+  "homepage": "https://github.com/amelieasberger/custom-image-slider#readme",
   "devDependencies": {
     "@babel/cli": "^7.24.8",
     "@babel/core": "^7.25.2",

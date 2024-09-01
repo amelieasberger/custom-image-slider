@@ -15,7 +15,7 @@ export default function PageContainer() {
 
     return (
         <>
-            <h1>Hello Towa, welcome to my product slider</h1>
+            <h1>Hello, welcome to my product slider</h1>
             {products.length > 0 && (
                 <Slider products={products} />
             )}

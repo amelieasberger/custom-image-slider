@@ -1,6 +1,6 @@
-# towa-image-slider
+# custom-image-slider
 
-towa-image-slider is a responsive slider with custom navigation arrows, build with React/Typescript and Swiper.js React Components.
+custom-image-slider is a responsive slider with custom navigation arrows, build with React/Typescript and Swiper.js React Components.
 
 ### To install the project, use:
 ```bash
